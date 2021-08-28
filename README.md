@@ -4,3 +4,4 @@
 ![linter-check](https://github.com/viskuzi/frontend-project-lvl1/actions/workflows/linter-check.yml/badge.svg) 
 https://asciinema.org/a/MRfKCGBI6RkCff5Tk4izxA3du
 https://asciinema.org/a/LbkZWJN9NHsNDVIydUDhzovrM
+https://asciinema.org/a/2fAwsW1ZuWsKLTmmyWkX4mgCh
