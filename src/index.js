@@ -10,7 +10,6 @@ const engine = (rules, getAnswer, checkAnswer) => {
 
   while (gameNumber < 3) {
     const answer = getAnswer();
-
     const result = checkAnswer(answer);
     const userAnswer = result[0];
     const correctAnswer = result[1];
@@ -18,7 +17,7 @@ const engine = (rules, getAnswer, checkAnswer) => {
     if (userAnswer && gameNumber < 3) {
       console.log('Correct!');
     } else {
-      console.log(`'${answer[4]}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
+      console.log(`'${answer[0]}' is wrong answer ;(. Correct answer was '${correctAnswer}'. Let's try again, ${userName}!`);
       return;
     }
     gameNumber += 1;

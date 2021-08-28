@@ -19,19 +19,19 @@ const getAnswer = () => {
   const hui = getRandomString();
   console.log(`Question: ${hui}`);
   const answer = readlineSync.question('Your answer: ');
-  return [a, b, i, hui, answer];
+  return [answer, a, b, i];
 };
 const checkAnswer = (answer) => {
   const countRandomString = () => {
-    if (answer[2] === 0) {
-      return answer[0] + answer[1];
-    } if (answer[2] === 1) {
-      return answer[0] - answer[1];
+    if (answer[3] === 0) {
+      return answer[1] + answer[2];
+    } if (answer[3] === 1) {
+      return answer[1] - answer[2];
     }
-    return answer[0] * answer[1];
+    return answer[1] * answer[2];
   };
   const correctAnswer = countRandomString();
-  const check = Number(answer[4]) === correctAnswer;
+  const check = Number(answer[0]) === correctAnswer;
   return [check, correctAnswer];
 };
 export { rules, getAnswer, checkAnswer };
