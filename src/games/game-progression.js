@@ -20,7 +20,7 @@ const getAnswer = () => {
   const arrayLength = array.length;
   const randomPlaceOfElement = Math.floor(Math.random(1) * arrayLength);
   const rightAnswer = array[randomPlaceOfElement];
-  array[randomPlaceOfElement] = '. .';
+  array[randomPlaceOfElement] = '..';
   array = array.join(' ');
 
   console.log(`Question: ${array}`);
