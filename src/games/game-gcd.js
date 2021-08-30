@@ -3,8 +3,8 @@ import readlineSync from 'readline-sync';
 const rules = 'Find the greatest common divisor of given numbers.';
 
 const getAnswer = () => {
-  const randomNumber1 = Math.ceil(Math.random(2) * 100);
-  const randomNumber2 = Math.ceil(Math.random(2) * 100);
+  const randomNumber1 = Math.floor(Math.random(2) * 100) + 1;
+  const randomNumber2 = Math.floor(Math.random(2) * 100) + 1;
   console.log(`Question: ${randomNumber1} ${randomNumber2}`);
   const answer = readlineSync.question('Your answer: ');
   return [answer, randomNumber1, randomNumber2];
