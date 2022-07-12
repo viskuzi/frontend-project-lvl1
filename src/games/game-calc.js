@@ -3,9 +3,9 @@ import readlineSync from 'readline-sync';
 const rules = 'What is the result of the expression?';
 
 const getAnswer = () => {
-  const a = Math.floor(Math.random(2) * 100);
-  const b = Math.floor(Math.random(2) * 100);
-  const randomNumber = Math.floor(Math.random(1) * 10000);
+  const a = Math.floor(Math.random() * 100);
+  const b = Math.floor(Math.random() * 100);
+  const randomNumber = Math.floor(Math.random() * 10000);
   const i = randomNumber % 3;
   const getRandomString = () => {
     if (i === 0) {
@@ -16,22 +16,23 @@ const getAnswer = () => {
     }
     return `${a} * ${b}`;
   };
-  const hui = getRandomString();
-  console.log(`Question: ${hui}`);
+  const question = getRandomString();
+  console.log(`Question: ${question}`);
   const answer = readlineSync.question('Your answer: ');
   return [answer, a, b, i];
 };
-const checkAnswer = (answer) => {
+
+const checkAnswer = (inputArray) => {
   const countRandomString = () => {
-    if (answer[3] === 0) {
-      return answer[1] + answer[2];
-    } if (answer[3] === 1) {
-      return answer[1] - answer[2];
+    if (inputArray[3] === 0) {
+      return inputArray[1] + inputArray[2];
+    } if (inputArray[3] === 1) {
+      return inputArray[1] - inputArray[2];
     }
-    return answer[1] * answer[2];
+    return inputArray[1] * inputArray[2];
   };
   const correctAnswer = countRandomString();
-  const check = Number(answer[0]) === correctAnswer;
-  return [check, correctAnswer];
+  const isCorrect = Number(inputArray[0]) === correctAnswer;
+  return [isCorrect, correctAnswer];
 };
 export { rules, getAnswer, checkAnswer };
